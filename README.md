@@ -94,8 +94,7 @@ In order to support application deployment, we need to create a packer image tha
 To create a Server image  using Packer and ensuring that the provided application is included in the template.
 The file server.json contains the code detailing the specifications of the to be deployed' Server image.
 
-Note that Powershell commands are used below to declare the environment variables that would ben needed
-during the creation of the packer image. The assigned values below are rendered fictitious shortly.
+Note that Powershell commands are used below to declare the environment variables that would ben needed during the creation of the packer image. The assigned values below are rendered fictitious shortly. The values below are customizable based on the Azure subscription credentials assignedd to this account.
 
 ````
 Set-Item -Path Env:\ARM_CLIENT_ID -Value "b2af4b8e-d619-499f-a9a8-3f150b40c48b"
@@ -105,10 +104,14 @@ Set-Item -Path Env:\tenant_id -Value "f958e84a-92b8-439f-a62d-4f45996b6d07"
 ````
 
 The packer image has been created as seen on the Az CLI and Az Portal respectively:
+![image](https://user-images.githubusercontent.com/28298236/186036585-06ef740c-d2ea-4dd9-8436-b56cb2846aef.png)
+
+![image](https://user-images.githubusercontent.com/28298236/186037315-46025d52-8dd3-44a1-b75b-419210579109.png)
+
+The created packer image is named myPackerImage.
 
 
-
-### Step X: Customizing the vars.tf file for us
+### Step 3: Customizing the vars.tf file for us
 
 
 ### Step X: Instruction to run the Terraform template
