@@ -1,2 +1,26 @@
-# Project-1
-Udacity DevOps Project 1
+# Deploying a Web Server in Azure: Udacity DevOps Project 1
+
+# Azure Infrastructure Operations Project: Deploying a scalable IaaS web server in Azure
+
+### Introduction
+For this project, you will write a Packer template and a Terraform template to deploy a customizable, scalable web server in Azure.
+
+### Getting Started
+1. Clone this repository
+
+2. Create your infrastructure as code
+
+
+### Dependencies
+1. Create an [Azure Account](https://portal.azure.com) 
+2. Install the [Azure command line interface](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+3. Install [Packer](https://www.packer.io/downloads)
+4. Install [Terraform](https://www.terraform.io/downloads.html)
+
+### Instructions
+1. Clone this repository
+
+```git clone github_rep_ssh_clone_link``
+
+### Output
+**Your words here**
