@@ -1,0 +1,10 @@
+{
+	"if": {
+		"field": "[concat('tags[', parameters('tagName'), ']')]",
+		"exists": "false"
+	},
+	"then": {
+		"effect": "deny"
+	}
+}
+    
