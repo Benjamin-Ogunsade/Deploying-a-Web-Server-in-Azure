@@ -6,7 +6,7 @@
 For this project, you will write a Packer template and a Terraform template to deploy a customizable, scalable web server in Azure.
 
 ### Getting Started
-1. Clone the startee repository
+1. Clone the starter repository
 
 2. Create your infrastructure as code
 
@@ -23,20 +23,27 @@ To clone the starter repository, a public ssh key needs to be generated for remo
 ````
 ssh-keygen -t rsa
 ````
+![image](https://user-images.githubusercontent.com/28298236/185976602-ab944906-2b2b-455a-b01b-a0d39e760a6a.png)
+
 The above command generates the public key which is recovered via:
 
 ````
 cat /home/odl_user/.ssh/id_rsa.pub
 ````
+![image](https://user-images.githubusercontent.com/28298236/185976911-ec54aa80-c6ef-446e-b43a-c01fde7f14ac.png)
 
 This is copied and pasted [here](https://github.com/settings/keys), select "New SSH key", give it a suitable title e.g "SSH-key-for-Udacity-Access-Lab". Validate it.
 
-Thence, the git clone command will run, unhinddred.
+Thence, the git clone command will run, unhindered.
 
 
 ```
-git clone github_rep_ssh_clone_link
+git clone git@github.com:Benjamin-Ogunsade/Project-1.git
 ````
+![image](https://user-images.githubusercontent.com/28298236/185977312-93211a93-712d-4f06-9cd1-a7315e2d8f38.png)
+
+With the remote repository cloned to the Azure CLI local machine, one could modify files remotely.
+
 
 ### Step 1: Create a policy that denies the creation of the index resources which don't have tags.
 
