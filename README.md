@@ -20,7 +20,9 @@ For this project, you will write a Packer template and a Terraform template to d
 ### Instructions
 1. Clone this repository
 
-```git clone github_rep_ssh_clone_link````
+```
+git clone github_rep_ssh_clone_link
+````
 
 ### Output
 **Your words here**
