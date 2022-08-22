@@ -58,7 +58,7 @@ Do endeavour to be in the right directory on your CLI for the commands to run co
 Next, a policy definition CLI variable is declared
 
 ````
-$definition = New-AzPolicyDefinition -Name 'tagging-policy' -DisplayName 'Require a tag on resources' -Description 'Enforces existence of a tag only on resources, but not applied to resource groups.' -Policy './myPolicy.json' -Mode 'Indexed' -Metadata '{"version":"1.0.1","category":"Tags"}' -Parameter '{"tagName":{"type":"String","metadata":{"displayName":"environment","description":"environment"}}}'
+$definition = New-AzPolicyDefinition -Name 'tagging-policy' -DisplayName 'Require a tag on resources' -Description 'Enforces existence of a tag only on resources, but not applied to resource groups.' -Policy './myPolicyRule.json' -Mode 'Indexed' -Metadata '{"version":"1.0.1","category":"Tags"}' -Parameter '{"tagName":{"type":"String","metadata":{"displayName":"environment","description":"environment"}}}'
 ````
 
 Then, a policy assignment variable is also created. This variable takes the aforementioned policy definition variable as one of its flag options parameter
