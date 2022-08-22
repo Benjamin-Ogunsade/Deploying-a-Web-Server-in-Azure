@@ -37,10 +37,12 @@ This is copied and pasted [here](https://github.com/settings/keys), select "New 
 Thence, the git clone command will run, unhindered.
 
 
-```
+````
 git clone git@github.com:Benjamin-Ogunsade/Project-1.git
 ````
+
 ![image](https://user-images.githubusercontent.com/28298236/185977312-93211a93-712d-4f06-9cd1-a7315e2d8f38.png)
+
 
 With the remote repository cloned to the Azure CLI local machine, one could modify files remotely.
 
@@ -55,10 +57,11 @@ Firstly, you are admonished to place the policy definition myPolicy.json in the 
 
 Do endeavour to be in the right directory on your CLI for the commands to run correctly. Here are a few lines of AzureCLI Powershell scripts to get the policy up and runnnig:
 
-Next, a policy definition CLI variable is declared
+Next, a policy definition CLI variable is declared:
+
 
 ````
-$definition = New-AzPolicyDefinition -Name 'tagging-policy' -DisplayName 'Require a tag on resources' -Description 'Enforces existence of a tag only on resources, but not applied to resource groups.' -Policy './myPolicyRule.json' -Mode 'Indexed' -Metadata '{"version":"1.0.1","category":"Tags"}' -Parameter '{"tagName":{"type":"String","metadata":{"displayName":"environment","description":"environment"}}}'
+$definition = New-AzPolicyDefinition -Name 'tagging-policy' -DisplayName 'Require a tag on resources' -Description 'Enforces existence of a tag only on resources, but not applied to resource groups.' -Policy './myPolicy.json' -Mode 'Indexed' -Metadata '{"version":"1.0.1","category":"Tags"}' -Parameter '{"tagName":{"type":"String","metadata":{"displayName":"environment","description":"environment"}}}'
 ````
 
 Then, a policy assignment variable is also created. This variable takes the aforementioned policy definition variable as one of its flag options parameter
