@@ -1,6 +1,6 @@
 # Deploying a Web Server in Azure: Udacity DevOps Project 1
 
-# Azure Infrastructure Operations Project: Deploying a scalable IaaS web server in Azure
+## Azure Infrastructure Operations Project: Deploying a scalable IaaS web server in Azure
 
 ### Introduction
 For this project, you will write a Packer template and a Terraform template to deploy a customizable, scalable web server in Azure.
@@ -86,7 +86,27 @@ Producing:
 ![image](https://user-images.githubusercontent.com/28298236/185987562-2a232816-1c76-4d37-b0da-b2d5566a922c.png)
 
 
-### Step X: Instruction to run the Packer template
+### Step 2: Instruction to run the Packer template
+
+In order to support application deployment, we need to create a packer image that is DRY and reproducable, to be leveraged upon in the Terraform template.
+
+
+To create a Server image  using Packer and ensuring that the provided application is included in the template.
+The file server.json contains the code detailing the specifications of the to be deployed' Server image.
+
+Note that Powershell commands are used below to declare the environment variables that would ben needed
+during the creation of the packer image. The assigned values below are rendered fictitious shortly.
+
+````
+Set-Item -Path Env:\ARM_CLIENT_ID -Value "b2af4b8e-d619-499f-a9a8-3f150b40c48b"
+Set-Item -Path Env:\ARM_CLIENT_SECRET -Value "zvo8Q~H84fvlaTM3mtJ1STeKdqZmLueQQKcWgdm6"
+Set-Item -Path Env:\ARM_SUBSCRIPTION_ID -Value "157081ad-2288-4aa4-b6d0-69f2165b7326"
+Set-Item -Path Env:\tenant_id -Value "f958e84a-92b8-439f-a62d-4f45996b6d07"
+````
+
+The packer image has been created as seen on the Az CLI and Az Portal respectively:
+
+
 
 ### Step X: Customizing the vars.tf file for us
 
