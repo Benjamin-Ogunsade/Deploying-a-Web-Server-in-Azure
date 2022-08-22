@@ -76,8 +76,14 @@ Next, the new policy definition' assignment is being applied:
 echo $assignment
 ````
 
-The screenshoot of the newly applied policy assignment is given below:
 ![image](https://user-images.githubusercontent.com/28298236/185986047-47d093d1-8515-4894-ba70-0e32a668f90c.png)
+
+The newly applied policy assignment is seen by running the command: 
+````
+az policy assignment list
+````
+Producing:
+![image](https://user-images.githubusercontent.com/28298236/185987562-2a232816-1c76-4d37-b0da-b2d5566a922c.png)
 
 
 ### Step X: Instruction to run the Packer template
