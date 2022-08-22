@@ -77,6 +77,7 @@ echo $assignment
 ````
 
 The screenshoot of the newly applied policy assignment is given below:
+![image](https://user-images.githubusercontent.com/28298236/185986047-47d093d1-8515-4894-ba70-0e32a668f90c.png)
 
 
 ### Step X: Instruction to run the Packer template
