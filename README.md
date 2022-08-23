@@ -103,6 +103,9 @@ Set-Item -Path Env:\ARM_SUBSCRIPTION_ID -Value "157081ad-2288-4aa4-b6d0-69f2165b
 Set-Item -Path Env:\tenant_id -Value "f958e84a-92b8-439f-a62d-4f45996b6d07"
 ````
 
+![image](https://user-images.githubusercontent.com/28298236/186040363-ffd9e4de-8e1f-49c3-b545-b93259eb2b73.png)
+
+
 The packer image has been created as seen on the Az CLI and Az Portal respectively:
 ![image](https://user-images.githubusercontent.com/28298236/186036585-06ef740c-d2ea-4dd9-8436-b56cb2846aef.png)
 
