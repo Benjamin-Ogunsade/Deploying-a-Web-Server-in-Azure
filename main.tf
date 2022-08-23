@@ -15,16 +15,17 @@ output "id" {
 }
 
 #Create virtual network
+#https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network
 resource "azurerm_virtual_network" "example" {
   name                = "${var.prefix}-network"
-  address_space       = ["10.0.0.0/24"]
+  address_space       = ["10.0.0.0/24"]   #["10.0.0.0/24"] is a list of string with 1 element
   location            = data.azurerm_resource_group.example.location
   resource_group_name = data.azurerm_resource_group.example.name
 }
 
 #Create subnet on the above VNet
 resource "azurerm_subnet" "internal" {
-  name                 = "internal"
+  name                 = "subnet"
   resource_group_name  = data.azurerm_resource_group.example.name
   virtual_network_name = azurerm_virtual_network.example.name
   address_prefixes     = azurerm_virtual_network.example.address_space
@@ -41,11 +42,11 @@ resource "azurerm_network_security_group" "example" {
 	  priority               = 101
 	  direction              = "Inbound"
 	  access                 = "Allow"
-	  protocol               = "tcp"
+	  protocol               = "Tcp"
 	  source_port_range      = "*"
 	  source_address_prefix	 = "*"
 	  destination_port_range = "*"
-	  destination_address_prefix = azurerm_virtual_network.example.address_space
+	  destination_address_prefix = "*"
 	  description            = "allow access to other VMs on the subnet"
 	  
 	  #by default all other inbound internet access are prohibited
@@ -106,7 +107,7 @@ resource "azurerm_lb" "example" {
 }
 
 #Load balancer backend pool [which will be in association for the network interface and the load balancer]
-
+#https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/lb_backend_address_pool_address
 resource "azurerm_lb_backend_address_pool" "example" {
   loadbalancer_id     = azurerm_lb.example.id
   name                = "BackEndAddressPool"
