@@ -128,7 +128,7 @@ resource "azurerm_lb_nat_rule" "example" {
   protocol                       = "Tcp"
   frontend_port                  = 443
   backend_port                   = 443
-  frontend_ip_configuration_name = "azurerm_public_ip.example.id"
+  frontend_ip_configuration_name = "PublicIPAddress"
 }
 
 
