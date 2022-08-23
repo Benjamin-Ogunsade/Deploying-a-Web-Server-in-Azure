@@ -146,6 +146,7 @@ resource "azurerm_availability_set" "example" {
 }
 
 #Using the data source to access information about the packer created image
+#https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/images
 data "azurerm_image" "packerimage" {
   name                = "myPackerImage"
   resource_group_name = "Azuredevops"

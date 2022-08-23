@@ -114,7 +114,11 @@ The created packer image is named myPackerImage.
 ### Step 3: Customizing the vars.tf file for us
 
 
-### Step X: Instruction to run the Terraform template
+### Step 4: Instruction to run the Terraform template
+Once the Packer image is successfully deployed, Terraform is used to deploy the infrastructure (making sure to run terraform plan with the -out flag, and save the plan file with the name solution.plan).
+
+Remember to recover the ManagedImageId and ManagedImageName that would be needed in the vars.tf and main.tf files respectively.
+
 ### Deploying the infrastructure
 
 Screenshot for Terraform Apply
