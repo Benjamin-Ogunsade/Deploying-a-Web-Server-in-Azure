@@ -26,7 +26,7 @@ resource "azurerm_virtual_network" "example" {
 resource "azurerm_subnet" "internal" {
   name                 = "internal"
   resource_group_name  = data.azurerm_resource_group.example.name
-  virtual_network_name = data.azurerm_virtual_network.example.name
+  virtual_network_name = azurerm_virtual_network.example.name
   address_prefixes     = azurerm_virtual_network.example.address_space
 }
 
@@ -108,7 +108,6 @@ resource "azurerm_lb" "example" {
 #Load balancer backend pool [which will be in association for the network interface and the load balancer]
 
 resource "azurerm_lb_backend_address_pool" "example" {
-  resource_group_name = data.azurerm_resource_group.example.name
   loadbalancer_id     = azurerm_lb.example.id
   name                = "BackEndAddressPool"
 }
