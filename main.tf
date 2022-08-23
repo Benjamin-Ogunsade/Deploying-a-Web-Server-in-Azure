@@ -36,7 +36,7 @@ resource "azurerm_network_security_group" "example" {
   location              = data.azurerm_resource_group.example.location
   name   				= "${var.prefix}-nsg"
 
-  security_rules {
+  security_rule {
 	  name                   = "allowaccesstoVMs"
 	  priority               = 101
 	  direction              = "Inbound"
@@ -56,7 +56,7 @@ resource "azurerm_network_security_group" "example" {
     costcenter  = "it"
   }
 
-  depends_on = [azurerm_resource_group.example]
+  depends_on = [data.azurerm_resource_group.example]
 }
 
 #Create a Network Interface
@@ -135,7 +135,7 @@ resource "azurerm_network_interface_backend_address_pool_association" "example" 
 
 #Create a virtual machine availability set
 resource "azurerm_availability_set" "example" {
-  name                = "{var.prefix}avset"
+  name                = "${var.prefix}avset"
   location            = data.azurerm_resource_group.example.location
   resource_group_name = data.azurerm_resource_group.example.name
   platform_fault_domain_count = 2
