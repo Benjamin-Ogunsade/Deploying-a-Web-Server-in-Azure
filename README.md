@@ -147,3 +147,9 @@ produces:
 ![image](https://user-images.githubusercontent.com/28298236/186057622-1752dc3c-7a34-416f-8364-861cda6e79b8.png)
 
 ![image](https://user-images.githubusercontent.com/28298236/186058068-1b119075-6405-4507-b756-a1ed71bfa954.png)
+
+Next is to deploy the infrastrusture once it passes the test using
+
+````
+`terraform apply
+````

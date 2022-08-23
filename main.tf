@@ -21,6 +21,12 @@ resource "azurerm_virtual_network" "example" {
   address_space       = ["10.0.0.0/24"]   #["10.0.0.0/24"] is a list of string with 1 element
   location            = data.azurerm_resource_group.example.location
   resource_group_name = data.azurerm_resource_group.example.name
+
+   tags = {
+    environment = "dev"
+    costcenter  = "it"
+  }
+
 }
 
 #Create subnet on the above VNet
@@ -122,7 +128,7 @@ resource "azurerm_lb_nat_rule" "example" {
   protocol                       = "Tcp"
   frontend_port                  = 443
   backend_port                   = 443
-  frontend_ip_configuration_name = "azurerm_lb.example.frontend_ip_configuration.public_ip_address_id"
+  frontend_ip_configuration_name = "azurerm_public_ip.example.id"
 }
 
 
