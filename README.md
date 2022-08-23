@@ -153,3 +153,6 @@ Next is to deploy the infrastrusture once it passes the test using
 ````
 `terraform apply
 ````
+
+
+![image](https://user-images.githubusercontent.com/28298236/186066588-55e06529-f8b3-4a28-bf1d-ee1d4480cdc6.png)
