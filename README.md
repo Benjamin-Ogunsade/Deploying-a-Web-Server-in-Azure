@@ -124,17 +124,26 @@ Once the Packer image is successfully deployed, Terraform is used to deploy the 
 From the Packer Image build result, remember to recover the ManagedImageId and ManagedImageName that would be needed in the vars.tf and main.tf files respectively.
 Confirm that all values of variables in the vars.tf and the authentication credentials stored as environment variables are intact.
 
-Before deploying the Terraform template via the files main.tf and vars.tf, run the command line below to view the plan of the proposed infractructure. This plan will then be eventually saved in the solution.paln file:
-
-
+Before deploying the Terraform template via the files main.tf and vars.tf, run the command line below to view the plan of the proposed infractructure. This plan will then be eventually saved in the solution.plan file:
 
 ### Deploying the infrastructure
 Here we apply the Terraform template in other to deploy the Infrastructure. Recall that We have the Web server installed in the Packer Image which is used to build the set infrastructure.
 
-
-
-Screenshot for Terraform Apply
-
-
 ### Output
-**Your words here**
+
+Do ensure that you run have the main.tf and the vars.tf files in the same folerdirectory and you're running the following commands from this path.
+
+````
+`terraform init
+````
+Which yields:
+![image](https://user-images.githubusercontent.com/28298236/186044982-a34ae85b-6ac6-472e-9314-42cb7cfb600e.png)
+
+````
+terraform plan -out solution.plan
+````
+produces:
+
+![image](https://user-images.githubusercontent.com/28298236/186057622-1752dc3c-7a34-416f-8364-861cda6e79b8.png)
+
+![image](https://user-images.githubusercontent.com/28298236/186058068-1b119075-6405-4507-b756-a1ed71bfa954.png)
