@@ -117,7 +117,7 @@ The created packer image is named myPackerImage.
 ### Step 3: Customizing the vars.tf file for use with the main.tf file
 
 The vars.tf englobes all the user customizable predefined or default variables. It serves to keep the code DRY (preventing hard coding) and for the security of authentication credentials.   
-
+To modify the vars.tf values, only edit the value of the key named 'default' for each declared variable.
 ### Step 4: Instruction to run the Terraform template
 Once the Packer image is successfully deployed, Terraform is used to deploy the infrastructure (making sure to run terraform plan with the -out flag, and save the plan file with the name solution.plan).
 

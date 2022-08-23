@@ -31,7 +31,7 @@ resource "azurerm_subnet" "internal" {
 }
 
 #Create a Network Security Group with some rules
-resource "azurerm_network-security-group" "example" {
+resource "azurerm_network_security_group" "example" {
   resource_group_name   = data.azurerm_resource_group.example.name
   location              = data.azurerm_resource_group.example.location
   name   				= "${var.prefix}-nsg"
