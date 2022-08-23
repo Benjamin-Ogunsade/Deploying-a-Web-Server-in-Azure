@@ -114,15 +114,24 @@ The packer image has been created as seen on the Az CLI and Az Portal respective
 The created packer image is named myPackerImage.
 
 
-### Step 3: Customizing the vars.tf file for us
+### Step 3: Customizing the vars.tf file for use with the main.tf file
 
+The vars.tf englobes all the user customizable predefined or default variables. It serves to keep the code DRY (preventing hard coding) and for the security of authentication credentials.   
 
 ### Step 4: Instruction to run the Terraform template
 Once the Packer image is successfully deployed, Terraform is used to deploy the infrastructure (making sure to run terraform plan with the -out flag, and save the plan file with the name solution.plan).
 
-Remember to recover the ManagedImageId and ManagedImageName that would be needed in the vars.tf and main.tf files respectively.
+From the Packer Image build result, remember to recover the ManagedImageId and ManagedImageName that would be needed in the vars.tf and main.tf files respectively.
+Confirm that all values of variables in the vars.tf and the authentication credentials stored as environment variables are intact.
+
+Before deploying the Terraform template via the files main.tf and vars.tf, run the command line below to view the plan of the proposed infractructure. This plan will then be eventually saved in the solution.paln file:
+
+
 
 ### Deploying the infrastructure
+Here we apply the Terraform template in other to deploy the Infrastructure. Recall that We have the Web server installed in the Packer Image which is used to build the set infrastructure.
+
+
 
 Screenshot for Terraform Apply
 
