@@ -74,7 +74,7 @@ resource "azurerm_network_interface" "example" {
   location            = data.azurerm_resource_group.example.location
 
   ip_configuration {
-    name                          = "internal"
+    name                          = "primary"
     subnet_id                     = azurerm_subnet.internal.id
     private_ip_address_allocation = "Dynamic"
   }
@@ -167,7 +167,7 @@ resource "azurerm_virtual_machine" "example" {
   name                            = "${var.prefix}-VM-${count.index}"
   resource_group_name             = data.azurerm_resource_group.example.name
   location                        = data.azurerm_resource_group.example.location
-  availability_set_id 			      = "azurerm_availability_set.example.id" #The ID of the Availability Set in which the Virtual Machine should exist
+  availability_set_id 			      = azurerm_availability_set.example.id #The ID of the Availability Set in which the Virtual Machine should exist
   vm_size                         = "Standard_D2s_v3"
   delete_os_disk_on_termination   = true
   delete_data_disks_on_termination = true
